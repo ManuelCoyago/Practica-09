@@ -3,6 +3,8 @@
 #include "QFileDialog"
 #include "QMessageBox"
 #include "QFile"
+#include "QCloseEvent"
+#include "acercadelprograma.h"
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
@@ -14,11 +16,30 @@ MainWindow::~MainWindow()
 {
     delete ui;
 }
+
+void MainWindow::closeEvent(QCloseEvent *event)
+{
+    if (ui->plainTextEdit->document()->isModified()) {
+        QMessageBox::StandardButton answer = QMessageBox::warning(this, "Advertencia",
+                                                                  "El archivo ha sido modificado. ¿Desea guardar los cambios antes de salir?",
+                                                                      QMessageBox::Yes | QMessageBox::No | QMessageBox::Cancel);
+
+        if (answer == QMessageBox::Yes) {
+            on_actionGuardar_Archivo_triggered();
+        } else if (answer == QMessageBox::Cancel) {
+            event->ignore(); // Cancelar el evento de cierre
+            return;
+        }
+    }
+
+    QMainWindow::closeEvent(event); // Continuar con el evento de cierre
+}
+
 void MainWindow::on_plainTextEdit_textChanged()
 {
     connect(ui->plainTextEdit, &QPlainTextEdit::textChanged, this, &MainWindow::actualizarConteoCaracteres);
-
 }
+
 void MainWindow::actualizarConteoCaracteres()
 {
     QString texto = ui->plainTextEdit->toPlainText();
@@ -52,6 +73,7 @@ void MainWindow::on_actionAbrir_Archivo_triggered()
         }
     }
 }
+
 void MainWindow::on_actionGuardar_Archivo_triggered()
 {
     // Mostrar el diálogo para seleccionar la ubicación y el nombre del archivo a guardar
@@ -80,17 +102,21 @@ void MainWindow::on_actionGuardar_Archivo_triggered()
     }
 }
 
-
 void MainWindow::on_actionNuevo_Archivo_triggered()
 {
     // Limpiar el contenido del QPlainTextEdit
     ui->plainTextEdit->clear();
 }
 
-
-
 void MainWindow::on_actionSalir_del_programa_triggered()
 {
     this->close();
+}
+
+
+void MainWindow::on_actionAcerca_del_programa_triggered()
+{
+    AcercaDelPrograma ventana;
+    ventana.exec();
 }
 

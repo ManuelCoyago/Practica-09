@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>AcercaDelPrograma</class>
+ <widget class="QDialog" name="AcercaDelPrograma">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>384</width>
+    <height>350</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QDialog {
+    background-color: #f2f2f2; /* Color de fondo en tono plomo */
+}
+
+QDialog::separator {
+    background-color: #c7c7c7; /* Color del separador */
+    width: 1px; /* Ancho del separador */
+    height: 100%; /* Altura del separador */
+}
+
+QDialog::separator:hover {
+    background-color: #a9a9a9; /* Color del separador al pasar el cursor */
+}
+
+QDialog::separator:horizontal {
+    margin-top: 6px; /* Margen superior del separador horizontal */
+    margin-bottom: 6px; /* Margen inferior del separador horizontal */
+}
+
+QDialog::separator:vertical {
+    margin-left: 6px; /* Margen izquierdo del separador vertical */
+    margin-right: 6px; /* Margen derecho del separador vertical */
+}
+</string>
+  </property>
+  <widget class="QDialogButtonBox" name="buttonBox">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>300</y>
+     <width>341</width>
+     <height>32</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {
+    background-color: #ffffff; /* Color de fondo blanco */
+    color: #333333; /* Color del texto */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados */
+    padding: 8px 16px; /* Espaciado interno */
+    font-size: 14px; /* Tamaño de fuente */
+}
+
+QPushButton:hover {
+    background-color: #f5f5f5; /* Color de fondo cuando se pasa el cursor */
+}
+
+QPushButton:pressed {
+    background-color: #e6e6e6; /* Color de fondo cuando se presiona */
+}
+</string>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Horizontal</enum>
+   </property>
+   <property name="standardButtons">
+    <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>20</y>
+     <width>121</width>
+     <height>111</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap>../../../../../Downloads/creador-de-contenido.png</pixmap>
+   </property>
+   <property name="scaledContents">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>200</x>
+     <y>50</y>
+     <width>121</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLabel {
+    background-color: #ffffff; /* Color de fondo blanco */
+    color: #000000; /* Color del texto negro */
+    border: 1px solid #c7c7c7; /* Borde gris */
+    border-radius: 4px; /* Bordes redondeados */
+    padding: 4px 8px; /* Espaciado interno */
+    font-size: 14px; /* Tamaño de fuente */
+    font-weight: bold; /* Negrita */
+}
+
+QLabel:hover {
+    background-color: #f2f2f2; /* Color de fondo al pasar el cursor */
+}
+
+QLabel:disabled {
+    color: #a9a9a9; /* Color del texto cuando está deshabilitado */
+}
+</string>
+   </property>
+   <property name="text">
+    <string>Blog de notas</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_3">
+   <property name="geometry">
+    <rect>
+     <x>190</x>
+     <y>90</y>
+     <width>141</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLabel {
+    background-color: #ffffff; /* Color de fondo blanco */
+    color: #000000; /* Color del texto negro */
+    border: 1px solid #c7c7c7; /* Borde gris */
+    border-radius: 4px; /* Bordes redondeados */
+    padding: 4px 8px; /* Espaciado interno */
+    font-size: 14px; /* Tamaño de fuente */
+    
+}
+
+QLabel:hover {
+    background-color: #f2f2f2; /* Color de fondo al pasar el cursor */
+}
+
+QLabel:disabled {
+    color: #a9a9a9; /* Color del texto cuando está deshabilitado */
+}
+</string>
+   </property>
+   <property name="text">
+    <string>Basado en Qt  6.5.1</string>
+   </property>
+  </widget>
+  <widget class="QPlainTextEdit" name="plainTextEdit">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>150</y>
+     <width>361</width>
+     <height>131</height>
+    </rect>
+   </property>
+   <property name="layoutDirection">
+    <enum>Qt::LeftToRight</enum>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPlainTextEdit {
+    background-color: #D3D3D3; /* Color de fondo plomo */
+    color: #000000; /* Color de texto */
+    border: none; /* Sin borde */
+    padding: 5px; /* Espaciado interno */
+    font-family: Arial, sans-serif; /* Fuente de texto */
+    text-align: center; /* Centrado de texto */
+}
+</string>
+   </property>
+   <property name="sizeAdjustPolicy">
+    <enum>QAbstractScrollArea::AdjustToContents</enum>
+   </property>
+   <property name="plainText">
+    <string>El Blog de Notas es una aplicación sencilla y práctica que te permite tomar notas de manera eficiente y organizar tu información de forma rápida y fácil. Con esta aplicación, podrás crear, editar y eliminar notas de texto, y contarás con diversas herramientas para personalizar tu experiencia.
+
+https://github.com/ManuelCoyago/Practica-08/tree/main</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>accepted()</signal>
+   <receiver>AcercaDelPrograma</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>248</x>
+     <y>254</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>157</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>rejected()</signal>
+   <receiver>AcercaDelPrograma</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>316</x>
+     <y>260</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>286</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>
